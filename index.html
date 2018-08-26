@@ -11,26 +11,26 @@
 
 <body onload="enableEditMode();">
     <div>
-        <button onclick="execCmd('bold');"><i class="fa fa-bold"></i></button>
-        <button onclick="execCmd('italic');"><i class="fa fa-italic"></i></button>
-        <button onclick="execCmd('underline');"><i class="fa fa-underline"></i></button>
-        <button onclick="execCmd('strikeThrough');"><i class="fa fa-strikethrough"></i></button>
-        <button onclick="execCmd('justifyLeft');"><i class="fa fa-align-left"></i></button>
-        <button onclick="execCmd('justifyCenter');"><i class="fa fa-align-center"></i></button>
-        <button onclick="execCmd('justifyRight');"><i class="fa fa-align-right"></i></button>
-        <button onclick="execCmd('justifyFull');"><i class="fa fa-align-justify"></i></button>
-        <button onclick="execCmd('cut');"><i class="fa fa-cut"></i></button>
-        <button onclick="execCmd('copy');"><i class="fa fa-copy"></i></button>
-        <button onclick="execCmd('indent');"><i class="fa fa-indent"></i></button>
-        <button onclick="execCmd('outdent');"><i class="fa fa-dedent"></i></button>
-        <button onclick="execCmd('subscript');"><i class="fa fa-subscript"></i></button>
-        <button onclick="execCmd('superscript');"><i class="fa fa-superscript"></i></button>
-        <button onclick="execCmd('undo');"><i class="fa fa-undo"></i></button>
-        <button onclick="execCmd('redo');"><i class="fa fa-repeat"></i></button>
-        <button onclick="execCmd('insertUnorderedList');"><i class="fa fa-list-ul"></i></button>
-        <button onclick="execCmd('insertOrderedList');"><i class="fa fa-list-ol"></i></button>
-        <button onclick="execCmd('bold');"><i class="fa fa-paragraph"></i></button>
-        <select onchange="execCommandWithArg('formatBlock',this.value)">
+        <button title="bold" onclick="execCmd('bold');"><i class="fa fa-bold"></i></button>
+        <button title="italic" onclick="execCmd('italic');"><i class="fa fa-italic"></i></button>
+        <button title="underline" onclick="execCmd('underline');"><i class="fa fa-underline"></i></button>
+        <button title="strikeThrough" onclick="execCmd('strikeThrough');"><i class="fa fa-strikethrough"></i></button>
+        <button title="align left" onclick="execCmd('justifyLeft');"><i class="fa fa-align-left"></i></button>
+        <button title="align center" onclick="execCmd('justifyCenter');"><i class="fa fa-align-center"></i></button>
+        <button title="align right" onclick="execCmd('justifyRight');"><i class="fa fa-align-right"></i></button>
+        <button title="align justify" onclick="execCmd('justifyFull');"><i class="fa fa-align-justify"></i></button>
+        <button title="cut" onclick="execCmd('cut');"><i class="fa fa-cut"></i></button>
+        <button title="copy" onclick="execCmd('copy');"><i class="fa fa-copy"></i></button>
+        <button title="indent" onclick="execCmd('indent');"><i class="fa fa-indent"></i></button>
+        <button title="dedent" onclick="execCmd('outdent');"><i class="fa fa-dedent"></i></button>
+        <button title="subscript" onclick="execCmd('subscript');"><i class="fa fa-subscript"></i></button>
+        <button title="superscript" onclick="execCmd('superscript');"><i class="fa fa-superscript"></i></button>
+        <button title="undo" onclick="execCmd('undo');"><i class="fa fa-undo"></i></button>
+        <button title="redo" onclick="execCmd('redo');"><i class="fa fa-repeat"></i></button>
+        <button title="unordered list" onclick="execCmd('insertUnorderedList');"><i class="fa fa-list-ul"></i></button>
+        <button title="ordered list" onclick="execCmd('insertOrderedList');"><i class="fa fa-list-ol"></i></button>
+        <button title="paragraph" onclick="execCmd('bold');"><i class="fa fa-paragraph"></i></button>
+        <select title="heading" onchange="execCommandWithArg('formatBlock',this.value)">
             <option value="H1">H1</option>
             <option value="H2">H2</option>
             <option value="H3">H3</option>
@@ -38,13 +38,13 @@
             <option value="H5">H5</option>
             <option value="H6">H6</option>
         </select>
-        <button onclick="execCmd('insertHorizontalRule');">HR</button>
-        <button onclick="execCommandWithArg('createLink',prompt('Enter a URL','http://'));"><i class="fa fa-link"></i></button>
-        <button onclick="execCmd('unlink');"><i class="fa fa-unlink"></i></button>
-        <button onclick="toggleSource();"><i class="fa fa-code"></i></button>
-        <button onclick="toggleEdit();">Toggle Edit</button>
+        <button title="horizontal rule" onclick="execCmd('insertHorizontalRule');">HR</button>
+        <button title="create link" onclick="execCommandWithArg('createLink',prompt('Enter a URL','http://'));"><i class="fa fa-link"></i></button>
+        <button title="remove link" onclick="execCmd('unlink');"><i class="fa fa-unlink"></i></button>
+        <button title="show source code" onclick="toggleSource();"><i class="fa fa-code"></i></button>
+        <button title="toggle edit" onclick="toggleEdit();">Toggle Edit</button>
         <br>
-        <select onchange="execCommandWithArg('fontName',this.value)">
+        <select title="font name" onchange="execCommandWithArg('fontName',this.value)">
             <option value="Arial">Arial</option>
             <option value="Comic Sans MS">Comic Sans MS</option>
             <option value="Courier">Courier</option>
@@ -55,7 +55,7 @@
             <option value="Times New Roman">Times New Roman</option>
             <option value="Verdana">Verdana</option>
         </select>
-        <select onchange="execCommandWithArg('fontSize',this.value)">
+        <select title="font size" onchange="execCommandWithArg('fontSize',this.value)">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -65,10 +65,10 @@
             <option value="7">7</option>
         </select>
         Color:
-        <input type="color" onchange="execCommandWithArg('foreColor',this.value)"> Background:
-        <input type="color" onchange="execCommandWithArg('hiliteColor',this.value)">
-        <button onclick="execCommandWithArg('insertImage',prompt('Enter the image URL',''));"><i class="fa fa-file-image-o"></i></button>
-        <button onclick="execCmd('selectAll');">Select All</button>
+        <input title="color" type="color" onchange="execCommandWithArg('foreColor',this.value)"> Background:
+        <input title="background" type="color" onchange="execCommandWithArg('hiliteColor',this.value)">
+        <button title="insert image" onclick="execCommandWithArg('insertImage',prompt('Enter the image URL',''));"><i class="fa fa-file-image-o"></i></button>
+        <button title="select all" onclick="execCmd('selectAll');">Select All</button>
     </div>
     <iframe name="richTextField" style="width: 1000px;height: 500px;"></iframe>
     <script src="js/app.js"></script>
