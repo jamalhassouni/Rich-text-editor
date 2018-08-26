@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Rich text editor in js</title>
+    <link href="favicon.ico" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+</head>
+
+<body onload="enableEditMode();">
+    <div>
+        <button onclick="execCmd('bold');"><i class="fa fa-bold"></i></button>
+    </div>
+    <iframe name="richTextField" style="width: 1000px;height: 500px;"></iframe>
+    <script type="text/javascript">
+    function enableEditMode() {
+        richTextField.document.designMode = 'On';
+    }
+
+    function execCmd(command) {
+        richTextField.document.execCommand(command);
+    }
+    </script>
+</body>
+
+</html>
