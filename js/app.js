@@ -1,20 +1,20 @@
- var showingSourceCode = false;
- var isInEditMode = true;
- var bodyTag = richTextField.document.getElementsByTagName('body')[0];
+ let showingSourceCode = false;
+ let isInEditMode = true;
+ let bodyTag = richTextField.document.getElementsByTagName('body')[0];
 
- function enableEditMode() {
+ let  enableEditMode = ()  => {
      richTextField.document.designMode = 'On';
  }
 
- function execCmd(command) {
+ let  execCmd = (command) =>  {
      richTextField.document.execCommand(command, false, null);
  }
 
- function execCommandWithArg(command, arg) {
+ let execCommandWithArg = (command,arg) =>  {
      richTextField.document.execCommand(command, false, arg);
  }
 
- function toggleSource() {
+ let toggleSource = () =>  {
      if (showingSourceCode) {
          bodyTag.innerHTML = bodyTag.textContent;
          showingSourceCode = false;
@@ -24,7 +24,7 @@
      }
  }
 
- function toggleEdit() {
+let  toggleEdit = () => {
      if (isInEditMode) {
          richTextField.document.designMode = 'Off';
          isInEditMode = false;
