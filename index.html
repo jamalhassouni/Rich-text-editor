@@ -10,6 +10,7 @@
 </head>
 
 <body onload="enableEditMode();">
+    <div class="container">
     <div>
         <button title="bold" onclick="execCmd('bold');"><i class="fa fa-bold"></i></button>
         <button title="italic" onclick="execCmd('italic');"><i class="fa fa-italic"></i></button>
@@ -45,7 +46,7 @@
         <button title="toggle edit" onclick="toggleEdit();">Toggle Edit</button>
         <br>
         <select title="font name" onchange="execCommandWithArg('fontName',this.value)">
-            <option value="Arial">Arial</option>
+            <option value="">Font family</option><option value="Arial">Arial</option>
             <option value="Comic Sans MS">Comic Sans MS</option>
             <option value="Courier">Courier</option>
             <option value="Georgia">Georgia</option>
@@ -56,6 +57,7 @@
             <option value="Verdana">Verdana</option>
         </select>
         <select title="font size" onchange="execCommandWithArg('fontSize',this.value)">
+            <option value="">Font size</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -71,6 +73,7 @@
         <button title="select all" onclick="execCmd('selectAll');">Select All</button>
     </div>
     <iframe name="richTextField" style="width: 1000px;height: 500px;"></iframe>
+</div>
     <script src="js/app.js"></script>
 </body>
 
