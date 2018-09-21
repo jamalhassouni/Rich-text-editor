@@ -11,69 +11,79 @@
 
 <body onload="enableEditMode();">
     <div class="container">
-    <div>
-        <button title="bold" onclick="execCmd('bold');"><i class="fa fa-bold"></i></button>
-        <button title="italic" onclick="execCmd('italic');"><i class="fa fa-italic"></i></button>
-        <button title="underline" onclick="execCmd('underline');"><i class="fa fa-underline"></i></button>
-        <button title="strikeThrough" onclick="execCmd('strikeThrough');"><i class="fa fa-strikethrough"></i></button>
-        <button title="align left" onclick="execCmd('justifyLeft');"><i class="fa fa-align-left"></i></button>
-        <button title="align center" onclick="execCmd('justifyCenter');"><i class="fa fa-align-center"></i></button>
-        <button title="align right" onclick="execCmd('justifyRight');"><i class="fa fa-align-right"></i></button>
-        <button title="align justify" onclick="execCmd('justifyFull');"><i class="fa fa-align-justify"></i></button>
-        <button title="cut" onclick="execCmd('cut');"><i class="fa fa-cut"></i></button>
-        <button title="copy" onclick="execCmd('copy');"><i class="fa fa-copy"></i></button>
-        <button title="indent" onclick="execCmd('indent');"><i class="fa fa-indent"></i></button>
-        <button title="dedent" onclick="execCmd('outdent');"><i class="fa fa-dedent"></i></button>
-        <button title="subscript" onclick="execCmd('subscript');"><i class="fa fa-subscript"></i></button>
-        <button title="superscript" onclick="execCmd('superscript');"><i class="fa fa-superscript"></i></button>
-        <button title="undo" onclick="execCmd('undo');"><i class="fa fa-undo"></i></button>
-        <button title="redo" onclick="execCmd('redo');"><i class="fa fa-repeat"></i></button>
-        <button title="unordered list" onclick="execCmd('insertUnorderedList');"><i class="fa fa-list-ul"></i></button>
-        <button title="ordered list" onclick="execCmd('insertOrderedList');"><i class="fa fa-list-ol"></i></button>
-        <button title="paragraph" onclick="execCmd('bold');"><i class="fa fa-paragraph"></i></button>
-        <select title="heading" onchange="execCommandWithArg('formatBlock',this.value)">
-            <option value="H1">H1</option>
-            <option value="H2">H2</option>
-            <option value="H3">H3</option>
-            <option value="H4">H4</option>
-            <option value="H5">H5</option>
-            <option value="H6">H6</option>
-        </select>
-        <button title="horizontal rule" onclick="execCmd('insertHorizontalRule');">HR</button>
-        <button title="create link" onclick="execCommandWithArg('createLink',prompt('Enter a URL','http://'));"><i class="fa fa-link"></i></button>
-        <button title="remove link" onclick="execCmd('unlink');"><i class="fa fa-unlink"></i></button>
-        <button title="show source code" onclick="toggleSource();"><i class="fa fa-code"></i></button>
-        <button title="toggle edit" onclick="toggleEdit();">Toggle Edit</button>
-        <br>
-        <select title="font name" onchange="execCommandWithArg('fontName',this.value)">
-            <option value="">Font family</option><option value="Arial">Arial</option>
-            <option value="Comic Sans MS">Comic Sans MS</option>
-            <option value="Courier">Courier</option>
-            <option value="Georgia">Georgia</option>
-            <option value="Tahoma">Tahoma</option>
-            <option value="Roboto">Roboto</option>
-            <option value="Ubuntu">Ubuntu</option>
-            <option value="Times New Roman">Times New Roman</option>
-            <option value="Verdana">Verdana</option>
-        </select>
-        <select title="font size" onchange="execCommandWithArg('fontSize',this.value)">
-            <option value="">Font size</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-        </select>
-        Color:
-        <input title="color" type="color" onchange="execCommandWithArg('foreColor',this.value)"> Background:
-        <input title="background" type="color" onchange="execCommandWithArg('hiliteColor',this.value)">
-        <button title="insert image" onclick="execCommandWithArg('insertImage',prompt('Enter the image URL',''));"><i class="fa fa-file-image-o"></i></button>
-        <button title="select all" onclick="execCmd('selectAll');">Select All</button>
+        <div class="nav">
+            <button data-tooltip="bold" class="tooltip button -regular"  onclick="execCmd('bold');"><i class="fa fa-bold"></i></button>
+            <button data-tooltip="italic" class="tooltip button -regular"  onclick="execCmd('italic');"><i class="fa fa-italic"></i></button>
+            <button data-tooltip="underline" class="tooltip button -regular"  onclick="execCmd('underline');"><i class="fa fa-underline"></i></button>
+            <button data-tooltip="strikeThrough" class="tooltip button -regular"  onclick="execCmd('strikeThrough');"><i class="fa fa-strikethrough"></i></button>
+            <button data-tooltip="align left" class="tooltip button -regular"  onclick="execCmd('justifyLeft');"><i class="fa fa-align-left"></i></button>
+            <button data-tooltip="align center" class="tooltip button -regular" onclick="execCmd('justifyCenter');"><i class="fa fa-align-center"></i></button>
+            <button data-tooltip="align right" class="tooltip button -regular"  onclick="execCmd('justifyRight');"><i class="fa fa-align-right"></i></button>
+            <button data-tooltip="align justify" class="tooltip button -regular"  onclick="execCmd('justifyFull');"><i class="fa fa-align-justify"></i></button>
+            <button data-tooltip="cut" class="tooltip button -regular" onclick="execCmd('cut');"><i class="fa fa-cut"></i></button>
+            <button data-tooltip="copy" class="tooltip button -regular"  onclick="execCmd('copy');"><i class="fa fa-copy"></i></button>
+            <button data-tooltip="indent" class="tooltip button -regular"  onclick="execCmd('indent');"><i class="fa fa-indent"></i></button>
+            <button data-tooltip="dedent" class="tooltip button -regular" onclick="execCmd('outdent');"><i class="fa fa-dedent"></i></button>
+            <button data-tooltip="subscript" class="tooltip button -regular" onclick="execCmd('subscript');"><i class="fa fa-subscript"></i></button>
+            <button data-tooltip="superscript" class="tooltip button -regular"  onclick="execCmd('superscript');"><i class="fa fa-superscript"></i></button>
+            <button data-tooltip="undo" class="tooltip button -regular"  onclick="execCmd('undo');"><i class="fa fa-undo"></i></button>
+            <button data-tooltip="redo" class="tooltip button -regular" onclick="execCmd('redo');"><i class="fa fa-repeat"></i></button>
+            <button data-tooltip="unordered list" class="tooltip button -regular"  onclick="execCmd('insertUnorderedList');"><i class="fa fa-list-ul"></i></button>
+            <button data-tooltip="ordered list" class="tooltip button -regular"  onclick="execCmd('insertOrderedList');"><i class="fa fa-list-ol"></i></button>
+            <button data-tooltip="paragraph" class="tooltip button -regular" onclick="execCmd('bold');"><i class="fa fa-paragraph"></i></button>
+             <button data-tooltip="horizontal rule" class="tooltip button -regular"  onclick="execCmd('insertHorizontalRule');">HR</button>
+            <select data-tooltip="heading" class="tooltip button -regular"  onchange="execCommandWithArg('formatBlock',this.value)">
+                <option value="">Heading</option>
+                <option value="H1">H1</option>
+                <option value="H2">H2</option>
+                <option value="H3">H3</option>
+                <option value="H4">H4</option>
+                <option value="H5">H5</option>
+                <option value="H6">H6</option>
+            </select>
+           
+            <button data-tooltip="create link" class="tooltip button -regular" onclick="execCommandWithArg('createLink',prompt('Enter a URL','http://'));"><i class="fa fa-link"></i></button>
+            <button data-tooltip="remove link" class="tooltip button -regular"  onclick="execCmd('unlink');"><i class="fa fa-unlink"></i></button>
+            <button data-tooltip="show source code" class="tooltip button -regular" onclick="toggleSource();"><i class="fa fa-code"></i></button>
+            <button data-tooltip="toggle edit" class="tooltip button -regular" onclick="toggleEdit();">Toggle Edit</button>
+             <button data-tooltip="insert image" class="tooltip button -regular" onclick="execCommandWithArg('insertImage',prompt('Enter the image URL',''));"><i class="fa fa-file-image-o"></i></button>
+
+            <button data-tooltip="select all" class="tooltip button -regular" onclick="execCmd('selectAll');">Select All</button>
+            <div  class="button -regular inp">
+            <label for="color">Color:</label>
+            <input id="color" data-tooltip="color"  class="tooltip inpColor"  type="color" onchange="execCommandWithArg('foreColor',this.value)"> 
+            </div>
+            <div class="button -regular inp">
+                <label  for="background">Background:</label>
+            <input id="background" data-tooltip="background" class="tooltip inpColor"  type="color" onchange="execCommandWithArg('hiliteColor',this.value)">
+             </div>
+            <select data-tooltip="font name" class="tooltip button -regular"onchange="execCommandWithArg('fontName',this.value)">
+                <option value="">Font family</option>
+                <option value="Arial">Arial</option>
+                <option value="Comic Sans MS">Comic Sans MS</option>
+                <option value="Courier">Courier</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Tahoma">Tahoma</option>
+                <option value="Roboto">Roboto</option>
+                <option value="Ubuntu">Ubuntu</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Verdana">Verdana</option>
+            </select>
+            <select data-tooltip="font size" class="tooltip button -regular" onchange="execCommandWithArg('fontSize',this.value)">
+                <option value="">Font size</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select>
+            
+           
+        </div>
+        <iframe name="richTextField" style="width: 1000px;height: 500px;"></iframe>
     </div>
-    <iframe name="richTextField" style="width: 1000px;height: 500px;"></iframe>
-</div>
     <script src="js/app.js"></script>
 </body>
 
